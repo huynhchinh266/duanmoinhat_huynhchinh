@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><Page Title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+    function checkPrimeNumber(checkNumber){
+            let sqrtNumber = parseInt(Math.sqrt(checkNumber));
+            for (let i=2; i<=sqrtNumber ;i++){
+                let check = checkNumber % i;
+                if (check === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        let numbers = parseInt(prompt("Nhập số lượng số nguyên tố cần in"));
+        let count = 0;
+        let N = 2;
+        while (count<numbers){
+            let check = checkPrimeNumber(N);
+            if (check){
+                document.write(N + "  ");
+                count++;
+            }
+            N++;
+        }
+    </script>
+</body>
+</html>

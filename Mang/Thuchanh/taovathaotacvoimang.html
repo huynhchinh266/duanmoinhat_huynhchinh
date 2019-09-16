@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <input type="text" id="txtValue"></input>
+    <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"></input>
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array();"></input>
+    <div id="result"></div>
+    <script>
+    let x = 0;
+    let array = Array();
+    function add_element_to_array() {
+    array[x] = document.getElementById("txtValue").value;
+    alert("Element: " + array[x] + " Added at index " + x);
+    x++;
+    document.getElementById("txtValue ").value = "";
+}
+    function add_element_to_array() {
+    array[x] = document.getElementById("txtValue").value;
+    alert("Element: " + array[x] + " Added at index " + x);
+    x++;
+    document.getElementById("txtValue ").value = "";
+}
+    </script>
+</body>
+</html>

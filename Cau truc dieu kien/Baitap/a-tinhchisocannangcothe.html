@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><tinhchisocannang></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Cân nặng
+    <input type="number" id="weight" value="0">
+    <br>
+    Chiều cao
+    <input type="number" id="height" value="0">
+    <br>
+    <button id="click" onclick="BMI();">Tính chỉ số</button>
+    <script>
+        function BMI(){
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value;
+            let bmi = weight / (height * height);
+            if (bmi < 18)
+                document.write("Underweight");
+            else if (bmi < 25.0)
+                document.write("Normal");
+            else if (bmi < 30.0)
+                document.write("Overweight");
+            else
+                document.write("Obese");
+        }
+    </script>
+</body>
+</html>

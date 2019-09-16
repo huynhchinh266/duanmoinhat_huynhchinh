@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>sukienchuot</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <form>
+        <img id="myImage" src="https://static.bongda24h.vn/medias/standard/2015/7/3/Tong-quan-tat-ca-nhung-trai-bong-da-duoc-su-dung-o-Premier-League-hinh-anh.jpg" />
+        <input type="button" value="Click Me" onclick="moveRight();"/>
+    </form>
+    <script>
+    let imgObj = null;
+    imgObj = document.getElementById('myImage');
+    function init() {
+    imgObj = document.getElementById('myImage');
+    imgObj.style.position = 'relative';
+    imgObj.style.left = '0px';
+}
+function moveRight() {
+    imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+}
+window.onload = init;
+    </script>
+</body>
+</html>

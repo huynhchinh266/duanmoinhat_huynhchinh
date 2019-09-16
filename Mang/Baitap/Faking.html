@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        <div style="text-align: center">
+                <h2>Type anthing slowly</h2>
+                <form name="f">
+                    <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+                </form>
+            </div>
+            <script>
+                let chuoi= "Thử tí cho vui";
+                let lengthChuoi = chuoi.length;
+                let text = "";
+                
+                function typeTextarea(){
+                    setTimeout(addText, 1);
+                }
+                
+                function addText(){
+                    let textInput = document.f.txt;
+                    //let textArea = document.getElementsByName("txt");
+                    //let textInput = textArea[0];
+                    let count = text.length;
+                
+                    if (count>=lengthChuoi){
+                        text = "";
+                    }
+                    else{
+                        text += chuoi[count];
+                    }
+                    if (textInput.value.length>text.length){
+                        textInput.value = 0;
+                    }
+                    textInput.value = text;
+                    
+                }
+            </script>
+</body>
+</html>

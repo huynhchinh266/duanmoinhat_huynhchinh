@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <form onsubmit="chuyenTien()">
+        Amount <input type="number" id="soLuong">
+        From Currency
+        <select id='fc'>
+            <option value='vn'>Việt Nam (VND)</option>
+            <option value='us'>Mỹ (USD)</option>
+        </select>
+        To Currency
+        <select id='tc'>
+            <option value='vn'>Việt Nam (VND)</option>
+            <option value='us'>Mỹ (USD)</option>
+        </select>
+        <input type="submit" value="Convert">    
+    </form>
+
+    <script type = "text/javascript">
+        function chuyenTien(){
+            let soLuong = document.getElementById("soLuong").value;           
+            let from = document.getElementById("fc").value;
+            let to = document.getElementById("tc").value;
+            
+            let chuyenl = 0;
+            let kiemTra = from + '-' + to;
+            if (from!=to)
+                switch (kiemTra){
+                    case "vn-us":
+                        chuyenl = soLuong/20000;
+                        break;
+                    case "us-vn":
+                        chuyenl = soLuong*20000;
+                        break;
+                }
+            document.write("Result: " + chuyenl);
+        }
+    </script>
+</body>
+</html>
