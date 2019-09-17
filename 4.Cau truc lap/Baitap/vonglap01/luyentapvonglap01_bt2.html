@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let degree = 0;
+        do{
+            degree = Number(prompt("Nhập nhiệt độ hiện tại "));
+            if (degree<20)
+                alert("Hãy tăng nhiệt độ lên!");
+            if (degree>100)
+                alert("Hãy giảm nhiệt độ xuống");
+        }while ((degree<20) || (degree>1000)) 
+        document.write("Nhiệt độ hiện tại: " + degree);
+    </script> 
+</body>
+</html>

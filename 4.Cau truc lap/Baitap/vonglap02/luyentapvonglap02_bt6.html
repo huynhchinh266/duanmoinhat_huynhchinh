@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let radiusSquare = 6*6;
+        let centerX = 10;
+        let centerY1 = 6;
+        let centerY2 = -6;
+        for (let i = 20; i>-20; i--){
+            for (let j = 20; j>-20; j--){
+                if (i>=12){                   
+                    let circle1 = Math.pow((i-centerX),2) + Math.pow((j-centerY1),2);
+                    let circle2 = Math.pow((i-centerX),2) + Math.pow((j-centerY2),2);
+                    if ((circle1-1 <= radiusSquare) || (circle2-1 <= radiusSquare))
+                        document.write("*&nbsp&nbsp");
+                    else
+                        document.write("&nbsp&nbsp&nbsp&nbsp");
+                }
+                else{
+                    if (Math.abs(j)<=i)
+                        document.write("*&nbsp&nbsp");
+                    else
+                        document.write("&nbsp&nbsp&nbsp&nbsp");
+                }
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

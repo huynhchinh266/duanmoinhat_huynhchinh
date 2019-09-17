@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let fibonaccy1 = 0;
+        let fibonaccy2 = 1;
+        let fibonaccy3 = 0;
+        let count = 2;
+        let sum = 1;
+        while(count < 20){
+            fibonaccy3 = fibonaccy1 + fibonaccy2;
+            sum += fibonaccy3;
+            fibonaccy1 = fibonaccy2;
+            fibonaccy2 = fibonaccy3;
+            count ++;
+        }
+        document.write("Tổng 20 số fibonaccy đầu tiên: " + sum);
+    </script>
+</body>
+</html>

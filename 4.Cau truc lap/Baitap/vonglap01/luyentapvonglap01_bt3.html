@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let fibonaccy = [0, 1];
+        let count = 2;
+        while(count < 20){
+            fibonaccy[count] = fibonaccy[count-1] + fibonaccy[count-2];
+            count ++;
+        }
+        document.write("20 số fibonaccy đầu tiên: " + fibonaccy);
+    </script>
+</body>
+</html>

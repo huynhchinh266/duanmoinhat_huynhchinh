@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let numberArray = [5,2,6,7,10,12,32,23,45,68,331,643,702];
+        let length = numberArray.length;
+        let findNumber = Number(prompt("Input V"));
+        document.write("Number Array: <br>" + numberArray +"<br>");
+        let result = -1;
+        for (let i=0;i<length;i++){
+            if (numberArray[i] === findNumber)
+                result = i;
+        }
+        if (result!== -1){
+            document.write("V is in the array<br>");
+            for (let i=result;i<length - 1;i++){
+                numberArray[i]=numberArray[i+1];
+            }
+            numberArray[length-1] = null;
+            document.write("Number Array: <br>" + numberArray +"<br>");
+        }
+        else
+            document.write("V is not in the array");
+    </script>
+</body>
+</html>

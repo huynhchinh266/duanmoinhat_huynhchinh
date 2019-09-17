@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let guessSize = parseInt(prompt("Bạn muốn đoán số trong khoảng từ 0 đên?"));
+        let randomNumber = Math.floor(Math.random * guessSize);
+        let figureNumber = 0;
+        let count = 0;
+        do{
+            figureNumber = parseInt(prompt("Số bạn đoán là:"));
+            if (randomNumber===figureNumber)
+                alert("Bạn đã đoán đúng");
+            else{
+                count++;
+                alert("Bạn đã đoán sai, bạn có " + (3-count) + " lần đoán nữa");
+            }
+        }while ((count<3) && (figureNumber!== randomNumber));
+        if (count==3)
+            alert("Bạn đã thua");
+    </script>
+</body>
+</html>

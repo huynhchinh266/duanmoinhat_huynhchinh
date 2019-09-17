@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-lg-6'>
+                <input type='number' disabled hidden='true' id='firstNumberForApp' style='width: 100%;' value='0'>
+            </div>
+            <div class='col-lg-6'>
+                <input type='text' disabled id='numberForApp' style='width: 100%;' value='0'>
+            </div>
+        </div>
+        <!--
+        <div class='row'>
+            <div class='col-lg-3'>
+                <button id='percen' style='width: 100%;'>%</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='square-root' style='width: 100%;'>√</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='square' style='width: 100%;'>Square</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='Division-x' style='width: 100%;'>1/x</button>
+            </div>
+        </div>
+        -->
+        <div class='row'>
+            <div class='col-lg-3' >
+                <button id='Ce' style='width: 100%;'>Ce</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='C' style='width: 100%;'>C</button>
+            </div>
+            <div class='col-lg-3'>
+                <!--<button id='delete' style='width: 100%;'>del</button> -->
+            </div>
+            <div class='col-lg-3'>
+                <button id='Division' style='width: 100%;' value='/' onclick='basicCalculate(this.value);'>/</button>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-3'>
+                <button id='number7' style='width: 100%;' value='7' onclick='addNumer(this.value);'>7</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='number8' style='width: 100%;' value='8' onclick='addNumer(this.value);'>8</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='number9' style='width: 100%;'  value='9' onclick='addNumer(this.value);'>9</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='multiplication' style='width: 100%;' value='x' onclick='basicCalculate(this.value);'>x</button>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-3'>
+                <button id='number4' style='width: 100%;' value='4' onclick='addNumer(this.value);'>4</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='number5' style='width: 100%;' value='5' onclick='addNumer(this.value);'>5</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='number6' style='width: 100%;' value='6' onclick='addNumer(this.value);'>6</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='subtraction' style='width: 100%;' value='-' onclick='basicCalculate(this.value);'>-</button>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-3'>
+                <button id='number1' style='width: 100%;' value='1' onclick='addNumer(this.value);'>1</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='number2' style='width: 100%;' value='2' onclick='addNumer(this.value);'>2</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='number3' style='width: 100%;' value='3' onclick='addNumer(this.value);'>3</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='addition' style='width: 100%;' value='+' onclick='basicCalculate(this.value);'>+</button>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-3'>
+                <button id='plus-Minus' style='width: 100%;'>+|-</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='number0' style='width: 100%;' value='0' onclick='addNumer(this.value);'>0</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='decimal' style='width: 100%;' value='.' onclick='addNumer(this.value);'>.</button>
+            </div>
+            <div class='col-lg-3'>
+                <button id='result' style='width: 100%;'>=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let firstNumberInput = 0;
+        let checkBasicCalculate = '0';
+        function addNumer(val){
+            let numInput = Number(document.getElementById('numberForApp').value);
+            switch (val){
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    if (numInput ===0 )
+                        document.getElementById('numberForApp').value = val;
+                    else
+                        document.getElementById('numberForApp').value += val;
+                    break;
+                case '.':
+                    if (numInput === 0 )
+                        document.getElementById('numberForApp').value = 0 + '.';
+                    else{
+                        let checkDecimal = Number(document.getElementById('numberForApp').value + '.');
+                        if (!isNaN(checkDecimal))
+                            document.getElementById('numberForApp').value += '.';
+                    }
+                        
+            }
+        }
+        function  basicCalculate(calVal){
+            if (checkBasicCalculate === '0'){
+                firstNumberInput = document.getElementById('numberForApp').value;
+                let firstNumber = document.getElementById('firstNumberForApp');
+                firstNumber.value = firstNumberInput;
+                firstNumber.hidden = false;
+                document.getElementById('numberForApp').value = 0;
+            }
+            checkBasicCalculate = calVal;
+        }
+        /*
+        document.getElementById('percen');
+        document.getElementById('square-root');
+        document.getElementById('square');
+        document.getElementById('Division-x');
+        */
+        document.getElementById('Ce').onclick = resetSecondNumber;
+        function resetSecondNumber(){
+            document.getElementById('numberForApp').value = 0;
+        }
+        document.getElementById('C').onclick = resetAll;
+        function resetAll(){
+            document.getElementById('numberForApp').value = 0;
+            firstNumberInput = 0;
+            checkBasicCalculate = '0';
+        }
+        document.getElementById('delete');
+       
+        document.getElementById('plus-Minus').onclick = plusMinus;
+        function plusMinus(){
+            let numInput = document.getElementById('numberForApp').value;
+            let num = parseInt(numInput);
+            if (num > 0 && num !==0)
+                document.getElementById('numberForApp').value = '-' + numInput;
+            else
+                document.getElementById('numberForApp').value = Math.abs(numInput);
+        };
+        document.getElementById('result').onclick = resultCalculate;
+        function resultCalculate(){
+            let firstNumber= Number(firstNumberInput);
+            let secondNumber = Number(document.getElementById('numberForApp').value);
+            switch (checkBasicCalculate){
+                case '+':
+                document.getElementById('numberForApp').value = firstNumber + secondNumber;
+                break;
+                case '-':
+                document.getElementById('numberForApp').value = firstNumber - secondNumber;
+                break;
+                case 'x':
+                document.getElementById('numberForApp').value = firstNumber * secondNumber;
+                break;
+                case '/':
+                document.getElementById('numberForApp').value = firstNumber / secondNumber;
+                break;
+            }
+            checkBasicCalculate = '0';
+            document.getElementById('firstNumberForApp').hidden = true;
+        }
+    </script>  
+</body>
+</html>

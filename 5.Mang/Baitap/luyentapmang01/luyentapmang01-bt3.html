@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let numberArray = [5,2,6,7,10,12,32,23,45,68,331,643,702,1111];
+        let max = 0;
+        let sum =numberArray[max];
+        let length = numberArray.length;
+        for (let i=1;i<length;i++){
+            sum += numberArray[i];
+            if (numberArray[max]<numberArray[i])
+                max = i;
+        }
+        let average = sum / length;
+        document.write("Số lớn nhất trong dãy là numberArray[" + max +"] = " + numberArray[max]);
+        document.write("<br>Trung bình cộng các số trong dãy là: " + average);
+    </script>
+</body>
+</html>

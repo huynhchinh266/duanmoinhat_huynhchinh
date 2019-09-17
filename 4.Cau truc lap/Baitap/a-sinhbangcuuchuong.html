@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let sout;
+        sout = "<table border='1' width='1200' cellspacing='0' cellpadding='3'>";
+        let i = 1;
+        while (i <= 10) {
+            let j = 2;
+            sout = sout + "<tr>";
+            while (j <= 10) {
+                sout = sout + "<td>" + j + " x " + i + " = "+ i * j + "</td>";
+                j++
+            }
+            sout = sout + "</tr>";
+            i++;
+        }
+        sout = sout + "</table>";
+        document.write(sout);
+    </script>
+</body>
+</html>

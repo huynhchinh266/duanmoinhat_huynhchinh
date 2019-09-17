@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let arr = "     srth   43t4 3t43t 43ths    123   rth    ";
+        let last = arr.length;
+        let check = 0;
+        while ((arr[check]===' ') && (check<last)){
+            check++;
+        }
+        let count = check<last? 1 : 0;
+        for (let i=check;i<last;i++){
+            if (arr[i]===' ' )
+                if (i+1<last){
+                    if (arr[i+1]!==' ')
+                        count++;
+                }
+        }
+        document.write("Số lượng các từ trong chuỗi là: " + count);
+    </script>
+</body>
+</html>

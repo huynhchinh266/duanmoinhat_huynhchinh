@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let string = "ffre-fwef  wef- fe -- fsdfbr";
+        document.write("Mảng trước khi thay: <br>" + string);
+        let transfer = "";
+        for (let i=0;i<string.length;i++){
+            if (string[i]!= '-')
+                transfer += string[i];
+            else
+                transfer += '_';
+        }
+            
+        string = transfer;
+        document.write("<br>Mảng sau khi thay: <br>" + string);
+    </script>
+</body>
+</html>

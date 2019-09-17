@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let numberArray = [5,2,6,7,10,12,32,23,45,68,331,643,702,1111];
+        let length = numberArray.length;
+        document.write("Dãy số trước khi sắp xếp: <br>" + numberArray);
+        for (let i = 0; i<length-1;i++){
+            let min = i;
+            for (let j = i +1; j<length;j++){
+                if (numberArray[min]<numberArray[j])
+                    min = j;
+            }
+            if (min !== i){
+                let transfer = numberArray[i];
+                numberArray[i] = numberArray[min];
+                numberArray[min] = transfer;
+            }
+        }
+        document.write("<br>Dãy số sau khi sắp xếp: <br>" + numberArray);
+    </script>
+</body>
+</html>
