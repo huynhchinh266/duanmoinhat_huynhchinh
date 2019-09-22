@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        Nhập số giờ gọi điện: <input type="number" id="gioGoi" value="0"> giờ<br>
+        <input type="button" value="Kiểm Tra" onclick="tienPhi();">
+        <script>
+            function tienPhi(){
+                let gioGoi = Number(document.getElementById("gioGoi").value);
+                let chiaMuc = gioGoi;
+                let phiGoiDien = 0;
+                if (gioGoi>100) {
+                    phiGoiDien += (chiaMuc - 100) * 50000;
+                    chiaMuc = 100;
+                }
+                if (gioGoi>50){
+                    phiGoiDien += (chiaMuc - 50) * 20000;
+                    chiaMuc = 50;
+                }
+                if (gioGoi>20){
+                    phiGoiDien += (chiaMuc - 20) * 10000;
+                    chiaMuc = 20;
+                }
+                phiGoiDien += chiaMuc * 5000;
+                    
+                alert("Phí điện thoại là: " + phiGoiDien + "VNĐ");
+            }
+        </script>
+</body>
+</html>

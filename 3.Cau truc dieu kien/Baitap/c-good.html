@@ -9,36 +9,28 @@
     <script src='main.js'></script>
 </head>
 <body>
-    Nhập tháng
-    <input type="number" min="1" max="12" id='month'>
-    <input type="button" value="Tính Số Ngày" onclick="checkDay();">
+    <input type="checkbox" id="goodBox" value="Good" onclick="check(this.id);">Good<br>
+    <input type="checkbox" id="fastBox" value="Fast" onclick="check(this.id);">Fast<br>
+    <input type="checkbox" id="cheapBox"value="Cheap" onclick="check(this.id);">Cheap<br>
     <script>
-        function checkDay(){
-            let month = Number(document.getElementById('month').value);
-            switch (month) {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    document.write("Tháng " + month + " có 31 ngày");
-                    break;
-                case 2:
-                document.write("Tháng " + month + " có 28 hoặc 29 ngày");
-                    break;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
-                    document.write("Tháng " + month + " có 30 ngày");
-                    break;
-                default:
-                    document.write("Vui lòng nhập tháng, " + month +" không phải là tháng");
-                    break;
-            }
+    function check(checkBoxId){
+    let goodBox = document.getElementById("goodBox");
+    let fastBox = document.getElementById("fastBox");
+    let cheapBox = document.getElementById("cheapBox");
+    let check = document.getElementById(checkBoxId);
+    if ((goodBox.checked) && (cheapBox.checked) && (fastBox.checked)){
+        switch (check){
+            case goodBox:
+                cheapBox.checked = false;
+                break;
+            case fastBox:
+                cheapBox.checked = false;
+                break;
+            case cheapBox:
+                goodBox.checked = false;
         }
+    }
+}
     </script>
 </body>
 </html>

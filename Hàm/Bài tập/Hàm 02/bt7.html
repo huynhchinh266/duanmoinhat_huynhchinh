@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        <input type="number" id="firstNumber">
+        <input type="number" id="secondNumber">
+        <input type="button" value="Đảo ngược số" onclick="giveBackResult()">
+        <script type="text/javascript" src="figure.js"></script>
+        <script>
+            function giveBackResult(){
+                let first = document.getElementById("firstNumber"),
+                    second = document.getElementById("secondNumber");
+                if ((first!="") &&(second!=="")){
+                    let obj = {
+                        number1: Number(first.value),
+                        number2: Number(second.value)
+                    }
+                    transferNumber(obj);
+                    first.value = obj.number1;
+                    second.value = obj.number2;
+                }
+                
+            }
+        </script>
+</body>
+</html>

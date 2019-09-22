@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        Nhập điểm kiểm tra: <input type="number" id="diemKt" value="0"><br>
+        Nhập điểm thi giữa kỳ: <input type="number" id="diemThiGiuaKy" value="0"><br>
+        Nhập điểm thi cuối kỳ: <input type="number" id="diemThiCuoiKy" value="0"><br>
+        <input type="button" value="Kiểm Tra" onclick="xepHang();">
+        <script>
+            function xepHang(){
+                let diemKt = Number(document.getElementById("diemKt").value);
+                let diemGiuaKy = Number(document.getElementById("diemThiGiuaKy").value);
+                let diemCuoiKy = Number(document.getElementById("diemThiCuoiKy").value);
+                
+                let trungBinh = (diemKt + diemGiuaKy*2 + diemCuoiKy*3)/6;
+                if (trungBinh>=8)
+                    alert("Điểm trung bình: " + trungBinh + ".Xếp hạng giỏi");
+                else if (trungBinh>=6.5)
+                    alert("Điểm trung bình: " + trungBinh + ".Xếp hạng khá");
+                else if (trungBinh>=5)
+                    alert("Điểm trung bình: " + trungBinh + ".Xếp hạng trung bình");
+                else
+                    alert("Điểm trung bình: " + trungBinh + ".Xếp hạng yếu");
+                
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhập độ rộng của hình chữ nhật:<input type="number" min="0" id="widthRectangle" value="0"><br>
+    Nhập độ cao của hình chữ nhật:<input type="number" min="0" id="heightRectangle" value="0"><br>
+    <input type="button" value="Tính Toán" onclick="areaRectangle();">
+    <script>
+        function areaRectangle(){
+            let width = Number(document.getElementById("widthRectangle").value);
+            let height = Number(document.getElementById("heightRectangle").value);
+            let area = width * height;
+            alert("Hình chữ nhật cạnh " + width + " x " + height + " có diện tích " + area);
+        }
+    </script>
+</body>
+</html>

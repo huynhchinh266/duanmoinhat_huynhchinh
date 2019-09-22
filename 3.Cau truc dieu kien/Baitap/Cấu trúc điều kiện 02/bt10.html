@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhập số điện: <input type="number" id="soDien" value="0"> KWh<br>
+    <input type="button" value="Kiểm Tra" onclick="tienPhi();">
+    <script>
+        function tienPhi(){
+            let soDien = Number(document.getElementById("soDien").value);
+            let chiaMuc = soDien;
+            let phiDien = 0;
+            if (soDien>400) {
+                phiDien += (chiaMuc - 400) * 2927;
+                chiaMuc = 400;
+            }
+            if (soDien>300){
+                phiDien += (chiaMuc - 300) * 2834;
+                chiaMuc = 300;
+            }
+            if (soDien>200){
+                phiDien += (chiaMuc - 200) * 2536;
+                chiaMuc = 200;
+            }
+            if (soDien>100){
+                phiDien += (chiaMuc - 100) * 2014;
+                chiaMuc = 100;
+            }
+            if (soDien>50){
+                phiDien += (chiaMuc - 50) * 1734;
+                chiaMuc = 50;
+            }
+            phiDien += chiaMuc * 1678;
+                
+            alert("Phí điện là: " + phiDien + "VNĐ");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Chỉ số cho phương trình<br>
+    <input type="number" min="0" id="aNumber" value="0">x+<input type="number" min="0" id="bNumber" value="0"><br>
+    <input type="button" value="Tính Toán" onclick="solveEquation();">
+    <script>
+        function solveEquation(){
+            let a = Number(document.getElementById("aNumber").value);
+            let b = Number(document.getElementById("bNumber").value);
+            if (a!==0){
+                let x = -b/a;
+                alert("Phương trình " + a + "x + " + b + " có nghiệm x = " + x);
+            }
+            else
+                alert("Phương trình " + a + " x + " + b + " vô nghiệm");
+        }
+    </script> 
+</body>
+</html>

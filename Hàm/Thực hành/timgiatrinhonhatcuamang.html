@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><s></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+    function minArray(arr) {
+    if(arr.length == 0)
+        return -1;
+    let min = 0;
+
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i] < arr[min]){
+            min = i;
+        }
+    }
+    return min;
+}
+let arr1 = [3, 5, 1, 8, -3, 7, 8];
+let arr2 = [7, 12, 6, 9, 20, 56, 89];
+let arr3 = [];
+let arr4 = [0, 0, 0, 0, 0, 0];
+let min = minArray(arr3);
+if (min!==-1)
+    alert(arr3[min]);
+else
+    alert("Mảng rỗng");
+    </script>
+</body>
+</html>

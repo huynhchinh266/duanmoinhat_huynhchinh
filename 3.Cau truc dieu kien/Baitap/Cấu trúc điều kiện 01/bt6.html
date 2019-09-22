@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        Nhập doanh thu: <input type="number" id="doanhThu" value="0"> VNĐ<br>
+        <input type="button" value="Kiểm Tra" onclick="hoaHong();">
+        <script>
+            function hoaHong(){
+                let doanhThu = Number(document.getElementById("doanhThu").value);
+                let hoaHong = 0;
+                if (doanhThu>=100000000)
+                    hoaHong = parseInt(doanhThu/10);
+                else if (doanhThu>=50000000)
+                    hoaHong = parseInt(doanhThu/20);
+                else if (doanhThu>=20000000)
+                    hoaHong = parseInt(doanhThu/40);
+                else
+                    hoaHong = parseInt(doanhThu/50);
+                alert("Hoa hồng nhận được: " + hoaHong + "VNĐ");
+            }
+        </script>
+</body>
+</html>

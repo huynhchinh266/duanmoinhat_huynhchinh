@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        <script>
+            function isPalindrome(word){
+    let start = 0,
+        end = word.length - 1;
+    while (start<end){
+        if (word[start]!==word[end])
+            return false;
+        start++;
+        end--;
+    }
+    return true;
+}
+            let input = prompt("Nhập chuỗi");
+            if (isPalindrome(input))
+                alert("Chuỗi đã nhập đối xứng");
+            else
+                alert("Chuỗi đã nhập không đối xứng");
+        </script>
+</body>
+</html>

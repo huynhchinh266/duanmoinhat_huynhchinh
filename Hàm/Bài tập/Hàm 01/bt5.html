@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body onload="load()">
+        <script>
+            let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+            let asterism = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+            
+            function find(starName){
+                for (let i = 0; i<star.length;i++){
+                    if (star[i] === starName)
+                        return i;
+                }
+                return -1;
+            }
+            function load(){
+                let inputStar = prompt("Nhập vào tên ngôi sao");
+                let local = find(inputStar);
+                if (local!==-1){
+                    alert("Ngôi sao " + inputStar + " thuộc chòm sao " + asterism[local]);
+                }
+                else{
+                    alert("Ngôi sao " + inputStar + " không tìm thấy");
+                }
+            }
+        </script>
+</body>
+</html>

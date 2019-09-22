@@ -8,42 +8,35 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-<body>
-    <h3>Caro Game Simple</h3>
-    <p id="carogame" />
-    <input type="button" value="Change Value" onclick="changeValue()">
-    <script>
-        let b = document.getElementById("carogame ");
+<body onload="hienThi()">
+        <h3>Caro Game Simple</h3>
+        <p id="carogame"></p>
+        <input type="button" value="Change Value" onclick="changeValue()">
         
-        let board = [];
-        let data = "";
-        for (let i = 0; i < 5; i++) {
-            board[i] = new Array(0, 0, 0, 0, 0);
-        }
-        
-        for (let i = 0; i < 5; i++) {
-            data += "<br/>";
-            for (let j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;";
+        <script>
+            let banCaro = document.getElementById("carogame");
+            
+            let hienThiBan = [];
+            for (let i = 0; i < 9; i++){
+                hienThiBan[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
             }
-        }
-        
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-        b.innerHTML = data;
-        function changeValue() {
-    let positionX = prompt("X: ");
-    let positionY = prompt("Y: ");
-    data = "";
-    board[positionX][positionY] = "x";
-    for (let i = 0; i < 5; i++) {
-        data += "<br/>";
-        for (let j = 0; j < 5; j++) {
-            data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
-        }
-    }
-    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-    b.innerHTML = "<hr/>" + data;
-}
+            function hienThi(){
+                let data = "";
+                for (let i = 0; i<9; i++){
+                    data += "<br>";
+                    for (let j = 0; j < 9; j++)
+                        data += hienThiBan[i][j] + "&nbsp;&nbsp;";
+                }
+                banCaro.innerHTML = data;
+            }
+            function changeValue(){
+                let x = parseInt(prompt("Nhập hàng của số cần thay"));
+                let y = parseInt(prompt("Nhập cột của số cần thay"));
+                if ((x>=1) && (x<=9) && (y>=1) && (y<=9)){
+                    hienThiBan[x-1][y-1] = 'x';
+                    hienThi();
+                }
+            }
         </script>
 </body>
 </html>

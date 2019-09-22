@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhập tuổi: <input type="number" id="old" value="0"><br>
+    <input type="button" value="Kiểm Tra" onclick="checkOld();">
+    <script>
+        function checkOld(){
+            let old = document.getElementById("old").value;
+            if (( old>0) && (old<120))
+                alert("Đây là tuổi của một người");
+            else
+                alert("Đây không phải là tuổi của một người");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><Page Title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        <label>Meters</label>
+        <input id="inputMeters" type="number" placeholder="Meters"
+            oninput="changeMeters(this.value)">
+        <br>
+        <label>Feet</label>
+        <input id="inputFeet" type="number" placeholder="Feet"
+            oninput="setTimeout(changeFeet(this.value),10)">
+    <script>
+    function feetToMeters(feet){
+    return (feet * 0.305);
+}
+
+function metersToFeet(meters){
+    return (meters * 3.279);
+}
+
+function changeMeters(distance){
+    let meters = Number(distance);
+    let convertResult = metersToFeet(meters);
+    let feet = document.getElementById("inputFeet");
+    feet.value = convertResult;
+}
+function changeFeet(distance){
+    let feet = Number(distance);
+    let convertResult = feetToMeters(feet);
+    let meters = document.getElementById("inputMeters");
+    meters.value = convertResult;
+}
+    </script>
+</body>
+</html>

@@ -10,27 +10,22 @@
 </head>
 <body>
     <script>
-     <input type="text" id='english'>
-    <input type="button" value='translate' onclick="translateEnglish()">
-    <script>
-        let english = ["number", "word", "world", "war", "face"];
-        let length = english.length;
-        let vietNam = ["số", "chữ", "thế giới", "war", "face"];
-        function translateEnglish(){
-            let word = document.getElementById("english").value;
-            let trans = -1;
-            for (let i=0;i<length;i++){
-                if (word === english[i]){
-                    trans = i;
-                    i = length + 1;
-                }
+        var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        let str = prompt("Nhập chuỗi");
+        let result = [];
+        document.write("Chuỗi đã nhập:" + str + "<br>");
+        for (let i=0; i<str.length;i++){
+            if (UPPER.indexOf(str[i]) !== -1){
+                result.push(str[i].toLowerCase());
             }
-            if (trans !== -1){
-                alert (word + " có nghĩa là " + vietNam[trans]);
+            else if(LOWER.indexOf(str[i]) !== -1){
+                result.push(str[i].toUpperCase());
             }
             else
-                alert("Không tìm thấy");
+                result.push(str[i]);
         }
+        document.write(result.join(''));
     </script>
 </body>
 </html>

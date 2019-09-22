@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        Nhập số: <input type="number" id="so" value="0"><br>
+        <input type="button" value="Kiểm Tra" onclick="checkNumber();">
+        <script>
+            function checkNumber(){
+                let so = document.getElementById("so").value;
+                if (so>0)
+                    alert("Số đã nhập lớn hơn 0");
+                else if (so<0)
+                    alert("Số đã nhập nhỏ hơn 0");
+                else
+                    alert("Số đã nhập bằng 0");
+            }
+        </script>
+</body>
+</html>

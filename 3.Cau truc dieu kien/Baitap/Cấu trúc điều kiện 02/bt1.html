@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhập nhiệt độ C:<input type="number" min="0" id="degreesC" value="0"> °C<br>
+    <input type="button" value="Chuyển" onclick="parseDegrees()">
+    <script>
+        function parseDegrees(){
+            let degreesC = Number(document.getElementById("degreesC").value);
+            let degreesF = degreesC * 9/5 + 32;
+            alert(degreesC + " °C = " + degreesF + " °F");
+        }
+    </script>
+</body>
+</html>

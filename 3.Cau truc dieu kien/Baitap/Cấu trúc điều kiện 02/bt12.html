@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhập số tiền vay 
+    <input type="number" min="0" id="tienVay" value="0">VNĐ<br>
+    Nhập mức lãi
+    <input type="number" min="0" id="mucLai" value="0">%<br>
+    Nhập thời gian vay
+    <input type="number" min="0" id="thoiGian" value="0">tháng<br>
+    <input type="button" value="Tính Toán" onclick="tienLai();">
+    <script>
+        function tienLai(){
+            let tienVay = Number(document.getElementById("tienVay").value) / 100;
+            let mucLai = Number(document.getElementById("mucLai").value);
+            let thoiGian = parseInt(document.getElementById("thoiGian").value);
+            
+            let tienPhaiTra = tienVay;
+            for (let i=0;i<thoiGian;i++){
+                let laiThang = tienVay*mucLai
+                tienPhaiTra += laiThang;
+            }
+            let lai = tienPhaiTra - tienVay;
+            alert("Tiền lãi là: " + lai + "VNĐ");
+        }
+    </script>
+</body>
+</html>

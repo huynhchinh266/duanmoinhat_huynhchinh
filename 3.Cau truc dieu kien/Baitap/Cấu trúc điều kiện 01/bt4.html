@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+        Nhập số 1: <input type="number" id="soMot" value="0"><br>
+        Nhập số 2: <input type="number" id="soHai" value="0"><br>
+        Nhập số 3: <input type="number" id="soBa" value="0"><br>
+        <input type="button" value="Kiểm Tra" onclick="checkMax();">
+        <script>
+            function checkMax(){
+                let so1 = document.getElementById("soMot").value;
+                let so2 = document.getElementById("soHai").value;
+                let so3 = document.getElementById("soBa").value;
+                
+                let max = so1;
+                max = max<so2? so2:max;
+                max = max<so3? so3:max;
+                alert("Số lớn nhất trong các số đã nhập là: " + max);
+                
+            }
+        </script>
+</body>
+</html>

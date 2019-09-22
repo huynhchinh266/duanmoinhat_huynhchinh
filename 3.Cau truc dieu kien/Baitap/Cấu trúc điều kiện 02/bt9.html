@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhập độ dài 3 cạnh của tam giác<br>
+    <input type="number" min="0" id="aNumber" value="0"><br>
+    <input type="number" min="0" id="bNumber" value="0"><br>
+    <input type="number" min="0" id="cNumber" value="0"><br>
+    <input type="button" value="Tính Toán" onclick="check();">
+    <script>
+        function check(){
+            let a = Number(document.getElementById("aNumber").value);
+            let b = Number(document.getElementById("bNumber").value);
+            let c = Number(document.getElementById("cNumber").value);
+            let ab= a+b;
+            let ac= a+c;
+            let bc= b+c;
+            if ((a>0) && (b>0) && (c>0) && (ab>c) && (ac>b) && (bc>a)){
+                alert("Các chỉ số đã nhập là độ dài các cạnh của một tam giác");
+            }  
+            else
+                alert("Các chỉ số đã nhập không là độ dài các cạnh của một tam giác");         
+        }
+    </script>
+</body>
+</html>

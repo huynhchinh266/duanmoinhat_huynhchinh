@@ -8,7 +8,15 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-<body>
-    <button type="button" Onclick="Xemtinnhan"
+<body onload="load();">
+        <script>
+            function plus(){
+                let inputNumber = Number(prompt("Nhập số"));
+                return inputNumber + 1;
+            }
+            function load(){
+                alert(plus());
+            }
+        </script>
 </body>
 </html>
