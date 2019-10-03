@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>nobita</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body onload="docReady()">
+        <img id="nobita" 
+        src="https://i.pinimg.com/originals/5a/bf/21/5abf219774a8c5a376ae081b70c7ccf6.jpg" 
+        style="position:absolute;top:0;left:0;" height="200" width="300"/>
+<script>
+    function upArrowPressed() {
+    let element = document.getElementById("nobita");
+    element.style.top = parseInt(element.style.top) - 10 + 'px';
+}
+function downArrowPressed() {
+    var element = document.getElementById("nobita");
+    element.style.top = parseInt(element.style.top) + 10 + 'px';
+}
+function leftArrowPressed() {
+    var element = document.getElementById("nobita");
+    element.style.left = parseInt(element.style.left) - 10 + 'px';
+}
+function rightArrowPressed() {
+    var element = document.getElementById("nobita");
+    element.style.left = parseInt(element.style.left) + 10 + 'px';
+
+}
+function moveSelection(evt) {
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+        case 38:
+            upArrowPressed();
+            break;
+        case 40:
+            downArrowPressed();
+            break;
+    }
+}
+function docReady() {
+    window.addEventListener('keydown', moveSelection);
+}
+</script>
+    </body>
+</html>

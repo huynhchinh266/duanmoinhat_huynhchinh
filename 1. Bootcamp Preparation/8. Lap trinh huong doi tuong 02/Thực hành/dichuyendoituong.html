@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>dichuyendoituong</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="game"></div>
+    <script>
+function Hero(image, top, left, size){
+  this.image = image;
+  this.top = top;
+  this.left = left;
+  this.size = size;
+
+  this.getHeroElement = function(){
+    return '<img width="'+ this.size + '"' +
+      ' height="'+ this.size + '"' +
+      ' src="' + this.image +'"' +
+      ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+  }
+
+  this.moveRight = function(){
+    this.left += 50;
+    console.log('ok: ' + this.left);
+  }
+
+}
+
+
+var hero = new Hero('https://scontent.fdad3-2.fna.fbcdn.net/v/t1.0-9/70998276_1447274148764961_1682764449951252480_n.jpg?_nc_cat=104&_nc_oc=AQkCY1_TtYVJE3JhGI-K-Y4aPcCcRC7Nye6UHKEzYJozSdxHFhzZ2Hdb8Z4BCKcd5fLY0RSv9C3mLvnGIE0lxNhR&_nc_ht=scontent.fdad3-2.fna&oh=0136d5eb961df4a8ac5a729fb57ba399&oe=5E2C1465', 50, 50,300);
+
+function start(){
+  if(hero.left < window.innerWidth - hero.size){
+    hero.moveRight();
+  }
+  document.getElementById('game').innerHTML = hero.getHeroElement();
+  setTimeout(start, 500)
+}
+
+start();
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Amount
+    <input type = "number" id = "SL">
+    From Currency
+        <select id = "FC">
+            <option value = "VN">Việt Nam (VNĐ)</option>
+            <option value="USD">Mỹ (USD)</option>
+        </select>
+    To Currency
+        <select id = "TC">
+            <option value="VN">Việt Nam (VNĐ)</option>
+            <option value="USD">Mỹ (USD)</option>
+        </select>
+    <input type ="submit" value = "convert"></input>
+    <p id="CT"></p>
+    <script>
+    function chuyentien() {
+        var a = document.getElementById("SL").value
+        var b = document.getElementById("FC").value
+        var c = document.getElementById("TC").value
+        if(b == "VN" && c=="USD"){
+            document.getElementById("CT").innerHTML=a/23000;
+        } else if (b == "USD" && c == "VN") {
+            document.getElementById("CT").innerHTML=23000*a;
+        } else {
+            document.getElementById("CT").innerHTML=a;
+        }
+    }
+    </script>
+</body>
+</html>

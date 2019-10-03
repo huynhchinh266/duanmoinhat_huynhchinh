@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>motahinhchunhat</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body onload="show()">
+    <div>
+        <p id="firstMessenge"></p>
+    </div>
+    <div><canvas id="draw" height="600px" width="1200px" style="border:1px solid #d3d3d3;"></canvas> </div>  
+    <div>
+        <p id="secondMessenge"></p>
+    </div>
+    <script>
+    function Rectangle(height, width){
+    this.height = height;
+    this.width = width;
+
+    this.setHeightWidth = function(height, width){
+        this.height = height;
+        this.width = width;
+    }
+    this.area = function(){
+        return this.height * this.width;
+    }
+    this.perimeter = function(){
+        return 2*(this.height + this.width);
+    }
+    this.draw = function(idCanvas){
+        let  canvas = document.getElementById(idCanvas).getContext("2d");
+        canvas.fillStyle = "#FF0000";
+        canvas.fillRect(200, 200, this.width, this.height);
+    }
+}
+function show(){
+    let height = 800,
+        width = 1000;
+    let hinh = new Rectangle(height, width);
+    document.getElementById("firstMessenge").innerHTML = "Hình chữ nhật rộng " + width + " cao " + height + "<br>";
+    hinh.draw("draw");
+    height = 800,
+    width = 1000;
+    hinh.setHeightWidth(height, width);
+    document.getElementById("secondMessenge").innerHTML = "Hình chữ nhật rộng" + width + " cao " + height + " có <br>"
+            + "Chu vi " + hinh.perimeter() + "<br>"
+            + "Diện tích " + hinh.area();
+}
+    </script>
+</body>
+</html>

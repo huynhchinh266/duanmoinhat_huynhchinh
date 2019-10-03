@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    Nhập thu nhập: <input type="number" id="thuNhap" value="0"> VNĐ <br>
+    <input type="button" value="Kiểm Tra" onclick="thueThuNhap();">
+    <script>
+        function thueThuNhap() {
+            let thuNhap = Number(document.getElementById("thuNhap").value);
+            let mucThue = 0;
+            if (thuNhap>2000000) {
+                mucThue = 0.02;
+            }
+            if (thuNhap>5000000){
+                mucThue = 0.04;
+            }
+            if (thuNhap>10000000){
+                mucThue = 0.06;
+            }
+            if (thuNhap>20000000){
+                mucThue = 0.08;
+            }
+                
+            let thue = thuNhap * mucThue;
+            alert("Thuế phải nộp là: " + thue + "VNĐ");
+        }
+    </script>
+</body>
+</html>

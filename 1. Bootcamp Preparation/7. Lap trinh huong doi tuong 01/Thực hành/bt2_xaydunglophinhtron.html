@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><xaydunglophinhtron></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+    let Circle = function(radius) {
+
+this.radius = radius;
+
+};
+this.getRadius = function() {
+    return radius;
+}
+this.getArea = function() {
+    return Math.PI * radius * radius;
+}
+let circle = new Circle(2);
+let radius = circle.getRadius();
+let area = circle.getArea(); 
+alert("radius: " + radius + "; area: " + area);
+    </script>
+</body>
+</html>

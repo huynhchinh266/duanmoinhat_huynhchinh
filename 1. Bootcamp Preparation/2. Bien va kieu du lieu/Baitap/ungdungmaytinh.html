@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <input type = "number" id = "SL1">
+    <input type = "number" id = "SL2"><br>
+    <input type = "submit" value = "Addition(+)" id ="+">
+    <input type = "submit" value = "Subtraction(-)" id ="-">
+    <input type = "submit" value = "Multiplication(*)" id ="*">
+    <input type = "submit" value = "Division(/)" id ="/">
+    <input type = "submit" value = "Result" onclick="calculator()">
+    <p id="KQ"></p>
+    <script>
+    function calculator() {
+        let a = document.getElementById("SL1").value
+        let b = document.getElementById("SL2").value
+        let add = document.getElementById("+").value
+        let sub = document.getElementById("-").value 
+        let mul = document.getElementById("*").value 
+        let div = document.getElementById("/").value 
+    }
+    </script>
+</body>
+</html>

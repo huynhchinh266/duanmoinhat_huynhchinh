@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><Page Title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        let Value = prompt('Type a number', 0);
+        
+        let isMinus = Value.slice(0, 1);
+        switch (isMinus) {
+            case '-':
+                alert(-1);
+                break;
+            case '0':
+                alert(0);
+                break;
+            default:
+                alert(1);
+        }
+    </script>
+</body>
+</html>
